@@ -9,6 +9,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Player.setup()
+	Inventory.show()
 	
 	var ite = "10001"
 	

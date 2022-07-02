@@ -7,7 +7,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	Inventory.hide()
 	
 	pass # Replace with function body.
 
