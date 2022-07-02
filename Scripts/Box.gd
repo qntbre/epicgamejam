@@ -14,10 +14,15 @@ func _ready():
 	#You could now make changes to the new instance if you wanted
 	#CurrentEntry.name = "SmokeA"
 	#Attach it to the tree
-	
+
+#func setBoxOpen(name) :
+
+
 func _on_area2D_area_entered(area):
-	print("Box hit")
-	self.queue_free()
+	if area.name == "killBoxTrigger" :
+		self.queue_free()
+	else :
+		print("trigger")
 
 func _physics_process(delta):
 	self.position += Vector2(speed, 0)
