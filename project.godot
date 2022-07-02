@@ -18,6 +18,7 @@ run/main_scene="res://Scenes/Player.tscn"
 Player="*res://Scripts/Player.gd"
 GameData="*res://Scenes/GameData.tscn"
 Inventory="*res://Scenes/Inventory.tscn"
+GameMenu="*res://Scenes/GameMenu.tscn"
 
 [global]
 
