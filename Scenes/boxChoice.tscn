@@ -1,17 +1,15 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Scenes/boxOpeningHUD.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/boxOpeningHUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/box1.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/big_open.png" type="Texture" id=4]
 [ext_resource path="res://Assets/balance.png" type="Texture" id=5]
 [ext_resource path="res://Assets/scale_front.png" type="Texture" id=6]
+[ext_resource path="res://Assets/background.png" type="Texture" id=7]
+[ext_resource path="res://Assets/background_top.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=2]
-size = 64
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=3]
 size = 64
 font_data = ExtResource( 3 )
 
@@ -54,7 +52,21 @@ animations = [ {
 "speed": 3.0
 } ]
 
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 3 )
+
 [node name="boxChoice" type="Node"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 511, 299.153 )
+scale = Vector2( 4.64115, 4.28791 )
+texture = ExtResource( 8 )
+
+[node name="BackgroundTop" type="Sprite" parent="."]
+position = Vector2( 511.876, 290.304 )
+scale = Vector2( 4.63749, 4.39789 )
+texture = ExtResource( 7 )
 
 [node name="boxChoiceHUD" type="CanvasLayer" parent="."]
 script = ExtResource( 1 )
@@ -81,22 +93,6 @@ margin_bottom = -50.0
 custom_fonts/font = SubResource( 2 )
 text = "Pass"
 
-[node name="Label" type="Label" parent="boxChoiceHUD"]
-margin_left = 402.0
-margin_top = 391.0
-margin_right = 566.0
-margin_bottom = 456.0
-custom_fonts/font = SubResource( 3 )
-text = "42   00"
-
-[node name="Dot" type="Label" parent="boxChoiceHUD"]
-margin_left = 475.0
-margin_top = 393.0
-margin_right = 515.0
-margin_bottom = 407.0
-rect_scale = Vector2( 4.20919, 4.20919 )
-text = "."
-
 [node name="ColorRect" type="ColorRect" parent="boxChoiceHUD"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -107,23 +103,52 @@ color = Color( 1, 1, 1, 0.0156863 )
 anims/RESET = SubResource( 4 )
 anims/fade_to_white = SubResource( 5 )
 
-[node name="BalanceBack" type="Sprite" parent="."]
+[node name="Balance" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -600.0
+margin_right = 512.0
+mouse_filter = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BalanceBack" type="Sprite" parent="Balance"]
 position = Vector2( 486, 410 )
 scale = Vector2( 6.2625, 6.2625 )
 texture = ExtResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Balance"]
 position = Vector2( 485, 203 )
 scale = Vector2( 3.02111, 3.02111 )
 frames = SubResource( 6 )
 
-[node name="BalanceFront" type="Sprite" parent="."]
+[node name="BalanceFront" type="Sprite" parent="Balance"]
 position = Vector2( 485, 415 )
 scale = Vector2( 6.2625, 6.2625 )
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Label" type="Label" parent="Balance"]
+margin_left = 402.0
+margin_top = 391.0
+margin_right = 566.0
+margin_bottom = 456.0
+custom_fonts/font = SubResource( 3 )
+text = "42   00"
+
+[node name="Dot" type="Label" parent="Balance"]
+margin_left = 475.0
+margin_top = 393.0
+margin_right = 515.0
+margin_bottom = 407.0
+rect_scale = Vector2( 4.20919, 4.20919 )
+text = "."
 
 [connection signal="pressed" from="boxChoiceHUD/Open" to="boxChoiceHUD" method="_on_Open_pressed"]
 [connection signal="pressed" from="boxChoiceHUD/DoNotOpen" to="boxChoiceHUD" method="_on_DoNotOpen_pressed"]
