@@ -48,4 +48,6 @@ text = "Work"
 align = 1
 valign = 1
 
+[node name="Node2D3" type="Node2D" parent="."]
+
 [connection signal="pressed" from="Node2D2/Control/Button" to="." method="_on_Button_pressed"]
