@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Scenes/boxOpeningHUD.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/boxOpeningHUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/box1.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/big_open.png" type="Texture" id=4]
 [ext_resource path="res://Assets/balance.png" type="Texture" id=5]
 [ext_resource path="res://Assets/scale_front.png" type="Texture" id=6]
+[ext_resource path="res://Assets/background.png" type="Texture" id=7]
+[ext_resource path="res://Assets/background_top.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=2]
 size = 64
@@ -55,6 +57,16 @@ animations = [ {
 } ]
 
 [node name="boxChoice" type="Node"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 511, 299.153 )
+scale = Vector2( 4.64115, 4.28791 )
+texture = ExtResource( 8 )
+
+[node name="BackgroundTop" type="Sprite" parent="."]
+position = Vector2( 511.876, 290.304 )
+scale = Vector2( 4.63749, 4.39789 )
+texture = ExtResource( 7 )
 
 [node name="boxChoiceHUD" type="CanvasLayer" parent="."]
 script = ExtResource( 1 )

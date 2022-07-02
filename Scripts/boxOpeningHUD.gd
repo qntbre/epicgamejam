@@ -19,7 +19,7 @@ func _on_Open_pressed():
 	$DoNotOpen.hide()
 	$AnimationPlayer.play("fade_to_white")
 	yield(get_tree().create_timer(1.4), "timeout")
-	get_tree().change_scene("res://Scenes/itemZoom.tscn")
+	get_tree().change_scene("res://Scenes/BoxOpeningSide.tscn")
 
 func _on_DoNotOpen_pressed():
 	$Open.hide()
