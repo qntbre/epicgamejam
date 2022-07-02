@@ -20,7 +20,6 @@ func create_inv(inv):
 		var new_slot = slot_canvas.instance()
 		new_slot.set_name(itemSlot)
 		grid.add_child(new_slot)
-		print(itemSlot)
 
 
 func display_inv(inv, items):
