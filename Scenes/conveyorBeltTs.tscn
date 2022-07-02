@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/cb/2.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/BoxSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/cb/3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/cb/1.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 161.75 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 549, 266 )
+
+[node name="BoxSpawner" parent="." instance=ExtResource( 2 )]
+position = Vector2( -481, 109 )
+rotation = -0.00778828
+z_index = 1
+
+[node name="killBoxTrigger" type="Area2D" parent="."]
+position = Vector2( 486, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killBoxTrigger"]
+position = Vector2( 145, 14 )
+shape = SubResource( 1 )
+
+[node name="beltSprites" type="Node2D" parent="."]
+position = Vector2( 0, 32 )
+scale = Vector2( 1, 2 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="beltSprites"]
+position = Vector2( -329, 46 )
+scale = Vector2( 2, 1.5 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="beltSprites"]
+position = Vector2( 111, 46 )
+scale = Vector2( 2, 1.5 )
+frames = SubResource( 2 )
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="beltSprites"]
+position = Vector2( 549, 46 )
+scale = Vector2( 2, 1.5 )
+frames = SubResource( 2 )
+frame = 2
+playing = true
+
+[connection signal="area_entered" from="killBoxTrigger" to="BoxSpawner" method="_on_Area2D_area_entered"]
