@@ -1,21 +1,26 @@
-extends RigidBody2D
+extends Node
 
-var followLine = 5
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
+var items = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pass
+	
+
+func load_data():
+	var item_file = File.new()
+	item_file.open("res://Assets/Items/ItemData.json", File.READ)
+	items = JSON.parse(item_file.get_as_text()).result
+	item_file.close()
+	
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Box_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-			if event.button_index == BUTTON_LEFT and event.pressed:
-				print("clicked")

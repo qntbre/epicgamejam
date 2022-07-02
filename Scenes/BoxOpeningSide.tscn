@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Box.gd" type="Script" id=1]
 [ext_resource path="res://Assets/tear_box.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 22.0227
+radius = 17.0294
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 12.258
+height = 147.81
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 172.542
+height = 320.577
 
 [node name="boxOpeningSide" type="Node2D"]
 
@@ -18,8 +26,23 @@ position = Vector2( 517.812, 286.733 )
 scale = Vector2( 5.82305, 5.82305 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+[node name="EndPoint" type="CollisionShape2D" parent="Box"]
+position = Vector2( 736, 209 )
+shape = SubResource( 1 )
+
+[node name="StartingPoint" type="CollisionShape2D" parent="Box"]
 position = Vector2( 530, 314 )
 shape = SubResource( 1 )
+
+[node name="BadHitBox" type="CollisionShape2D" parent="Box"]
+position = Vector2( 621, 270 )
+rotation = 1.09956
+scale = Vector2( -1.24055, -1.59774 )
+shape = SubResource( 2 )
+
+[node name="GoodHitBox" type="CollisionShape2D" parent="Box"]
+position = Vector2( 597, 300 )
+rotation = 1.09956
+shape = SubResource( 3 )
 
 [connection signal="input_event" from="Box" to="Box" method="_on_Box_input_event"]
