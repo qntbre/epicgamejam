@@ -4,8 +4,8 @@
       "Desc": "Weapon",
       "Price": 4.5,
       "Weight": 4.5,
-      "Image": "bubble_wrap.png",
-      "Tag": ["metelOpener"],
+      "Image": "btc.png",
+      "Tag": ["metalOpener"],
       },
     "10002": {
       "Name": "Bubble Wrap",
