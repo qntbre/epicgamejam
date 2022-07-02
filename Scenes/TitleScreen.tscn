@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/background.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/conveyorBeltTs.tscn" type="PackedScene" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/TitleScreen.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -22,10 +21,6 @@ texture = ExtResource( 2 )
 
 [node name="convoyerbeltTs" parent="Node2D" instance=ExtResource( 3 )]
 position = Vector2( 553, 257 )
-
-[node name="Icon" type="Sprite" parent="."]
-position = Vector2( 884, 148 )
-texture = ExtResource( 4 )
 
 [node name="Node2D2" type="Node2D" parent="."]
 z_index = 13
