@@ -1,17 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/pampers.png" type="Texture" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/itemZoom.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/itemDescription.gd" type="Script" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 64
-font_data = ExtResource( 2 )
+[ext_resource path="res://Scenes/ZoomItemDrag.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -43,56 +36,70 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="itemZoom" type="Node2D"]
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="itemZoom" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 3 )
 
-[node name="Pampers" type="Sprite" parent="."]
-position = Vector2( 514, 147 )
-scale = Vector2( 2.108, 2.108 )
+[node name="Item" type="CanvasLayer" parent="."]
+script = ExtResource( 4 )
+
+[node name="Description" type="Label" parent="Item"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="Weight" type="Label" parent="Item"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="Price" type="Label" parent="Item"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="ColorRect" type="ColorRect" parent="Item"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Item"]
+anims/RESET = SubResource( 3 )
+anims/fade_to_normal = SubResource( 4 )
+
+[node name="Element" type="TextureRect" parent="Item"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_top = 50.0
+margin_right = 100.0
+margin_bottom = 250.0
 texture = ExtResource( 1 )
+stretch_mode = 6
+script = ExtResource( 5 )
 
 [node name="Open" type="Button" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 778.0
-margin_top = 94.0
-margin_right = 930.0
-margin_bottom = 194.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 300.0
+margin_bottom = 200.0
 custom_fonts/font = SubResource( 1 )
 text = "Pass"
 
 [node name="DoNotOpen" type="Button" parent="."]
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 121.0
-margin_top = 93.0
-margin_right = 296.0
-margin_bottom = 193.0
+margin_left = -300.0
+margin_top = 100.0
+margin_right = -100.0
+margin_bottom = 200.0
 custom_fonts/font = SubResource( 2 )
 text = "Take"
-
-[node name="itemDescription" type="CanvasLayer" parent="."]
-script = ExtResource( 4 )
-
-[node name="Description" type="Label" parent="itemDescription"]
-margin_right = 40.0
-margin_bottom = 14.0
-
-[node name="Weight" type="Label" parent="itemDescription"]
-margin_right = 40.0
-margin_bottom = 14.0
-
-[node name="Price" type="Label" parent="itemDescription"]
-margin_right = 40.0
-margin_bottom = 14.0
-
-[node name="ColorRect" type="ColorRect" parent="itemDescription"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="itemDescription"]
-anims/RESET = SubResource( 3 )
-anims/fade_to_normal = SubResource( 4 )

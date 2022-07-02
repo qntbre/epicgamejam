@@ -20,7 +20,7 @@ func load_data():
 	item_file.close()
 	
 	var box_file = File.new()
-	box_file.open("res://Assets/Items/BoxData.json", File.READ)
+	box_file.open("res://Assets/Boxes/BoxData.json", File.READ)
 	boxes = JSON.parse(box_file.get_as_text()).result
 	box_file.close()
 	
