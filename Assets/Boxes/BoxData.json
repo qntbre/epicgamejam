@@ -1,0 +1,12 @@
+{
+  "1001": {
+      "Name": "Box",
+      "Type": "cartoon"
+      "Images": ["tear_box.png", "big_open.png"]
+  },
+  "1002": {
+      "Name": "Box",
+      "Type": "metal"
+      "Images": ["box1.png"]
+  },
+}
