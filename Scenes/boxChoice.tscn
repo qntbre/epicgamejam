@@ -1,0 +1,132 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/boxOpeningHUD.gd" type="Script" id=1]
+[ext_resource path="res://Assets/box1.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/big_open.png" type="Texture" id=4]
+[ext_resource path="res://Assets/balance.png" type="Texture" id=5]
+[ext_resource path="res://Assets/scale_front.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.0156863 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "fade_to_white"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.2, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.0156863 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="boxChoice" type="Node"]
+
+[node name="boxChoiceHUD" type="CanvasLayer" parent="."]
+script = ExtResource( 1 )
+
+[node name="Open" type="Button" parent="boxChoiceHUD"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = -150.0
+margin_right = 150.0
+margin_bottom = -50.0
+custom_fonts/font = SubResource( 1 )
+text = "open"
+
+[node name="DoNotOpen" type="Button" parent="boxChoiceHUD"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -225.0
+margin_top = -150.0
+margin_right = -50.0
+margin_bottom = -50.0
+custom_fonts/font = SubResource( 2 )
+text = "Pass"
+
+[node name="Label" type="Label" parent="boxChoiceHUD"]
+margin_left = 402.0
+margin_top = 391.0
+margin_right = 566.0
+margin_bottom = 456.0
+custom_fonts/font = SubResource( 3 )
+text = "42   00"
+
+[node name="Dot" type="Label" parent="boxChoiceHUD"]
+margin_left = 475.0
+margin_top = 393.0
+margin_right = 515.0
+margin_bottom = 407.0
+rect_scale = Vector2( 4.20919, 4.20919 )
+text = "."
+
+[node name="ColorRect" type="ColorRect" parent="boxChoiceHUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0.0156863 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="boxChoiceHUD"]
+anims/RESET = SubResource( 4 )
+anims/fade_to_white = SubResource( 5 )
+
+[node name="BalanceBack" type="Sprite" parent="."]
+position = Vector2( 486, 410 )
+scale = Vector2( 6.2625, 6.2625 )
+texture = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 485, 203 )
+scale = Vector2( 3.02111, 3.02111 )
+frames = SubResource( 6 )
+
+[node name="BalanceFront" type="Sprite" parent="."]
+position = Vector2( 485, 415 )
+scale = Vector2( 6.2625, 6.2625 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[connection signal="pressed" from="boxChoiceHUD/Open" to="boxChoiceHUD" method="_on_Open_pressed"]
+[connection signal="pressed" from="boxChoiceHUD/DoNotOpen" to="boxChoiceHUD" method="_on_DoNotOpen_pressed"]

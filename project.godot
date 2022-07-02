@@ -11,7 +11,6 @@ config_version=4
 [application]
 
 config/name="egj2022"
-run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [physics]
