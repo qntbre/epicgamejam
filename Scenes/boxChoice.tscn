@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/boxOpeningHUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/box1.png" type="Texture" id=2]
@@ -6,10 +6,6 @@
 [ext_resource path="res://Assets/big_open.png" type="Texture" id=4]
 [ext_resource path="res://Assets/balance.png" type="Texture" id=5]
 [ext_resource path="res://Assets/scale_front.png" type="Texture" id=6]
-
-[sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 64
@@ -36,7 +32,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "fade_to_white"
-length = 2.0
+length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
@@ -44,10 +40,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.2, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.0156863 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0.0156863 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="SpriteFrames" id=6]
@@ -68,10 +64,10 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 50.0
 margin_top = -150.0
-margin_right = 150.0
+margin_right = 175.0
 margin_bottom = -50.0
-custom_fonts/font = SubResource( 1 )
-text = "open"
+custom_fonts/font = SubResource( 2 )
+text = "Open"
 
 [node name="DoNotOpen" type="Button" parent="boxChoiceHUD"]
 anchor_left = 1.0
@@ -104,6 +100,7 @@ text = "."
 [node name="ColorRect" type="ColorRect" parent="boxChoiceHUD"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 color = Color( 1, 1, 1, 0.0156863 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="boxChoiceHUD"]

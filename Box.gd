@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-
+var followLine = 5
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
