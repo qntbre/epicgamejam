@@ -1,11 +1,7 @@
 #tool
 extends Node2D
 
-var boxInst
-var i = 0
-
-func _init():
-	boxInst = load("res://Scenes/Box.tscn")
+var boxes = ["BigBox.tscn", "Box.tscn"]
 
 #func _physics_process(delta):
 #	if i < 100:
@@ -16,18 +12,23 @@ func _init():
 #		i = i + 1
 #		self.get_parent().add_child(test)
 
-func _ready():
-	spawnBox()
+func rdmPosInt(maxi):
+	return randi()%maxi
 
-func spawnBox():
+func _ready():
+	spawnBox(rdmPosInt(boxes.size()))
+
+func spawnBox(id):
+	#var instanceId = randi()%boxes.size()
+	var boxScene = load("res://Scenes/Boxes/" + boxes[id])
 	var parent = self.get_parent()
-	var inst = boxInst.instance()
+	var inst = boxScene.instance()
 	inst.position = self.get_position()
 	call_deferred("add_child", inst)
-	print("samarsh")
+	print("Box spawned")
 
 func _on_Area2D_area_entered(area):
-	spawnBox()
+	spawnBox(rdmPosInt(boxes.size()))
 
 #func _on_Timer_timeout():
 	#var test = boxInst.instance()
