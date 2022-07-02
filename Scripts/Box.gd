@@ -1,5 +1,6 @@
 #tool
 extends Node2D
+
 export (float) var speed = 0.2
 
 # Declare member variables here. Examples:
@@ -13,10 +14,10 @@ func _ready():
 	#You could now make changes to the new instance if you wanted
 	#CurrentEntry.name = "SmokeA"
 	#Attach it to the tree
+	
+func _on_area2D_area_entered(area):
+	print("Box hit")
+	self.queue_free()
 
 func _physics_process(delta):
-	self.position -= Vector2(speed, 0)
-
-#func _draw():
-#	if Engine.is_editor_hint():
-#		draw_circle(Vector2(0,0), 20, Color.azure)
+	self.position += Vector2(speed, 0)
