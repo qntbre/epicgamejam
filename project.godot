@@ -11,6 +11,10 @@ config_version=4
 [application]
 
 config/name="egj2022"
+
+[global]
+
+displ=false
 run/main_scene="res://Scenes/Player.tscn"
 config/icon="res://icon.png"
 

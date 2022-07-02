@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/big_open.png-a0c244dc750f6881efc409a98d808c7a.stex"
+path="res://.import/small_close1.png-2a2bbaa9bd131e84603b8cc0884515d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/big_open.png"
-dest_files=[ "res://.import/big_open.png-a0c244dc750f6881efc409a98d808c7a.stex" ]
+source_file="res://Assets/small_close1.png"
+dest_files=[ "res://.import/small_close1.png-2a2bbaa9bd131e84603b8cc0884515d7.stex" ]
 
 [params]
 
@@ -20,11 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-<<<<<<< HEAD
-flags/filter=true
-=======
 flags/filter=false
->>>>>>> origin/mergeTest
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
