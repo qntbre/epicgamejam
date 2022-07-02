@@ -12,17 +12,17 @@ config_version=4
 
 config/name="egj2022"
 
-[global]
-
-displ=false
-run/main_scene="res://Scenes/Player.tscn"
-config/icon="res://icon.png"
-
 [autoload]
 
 Player="*res://Scripts/Player.gd"
 GameData="*res://Scenes/GameData.tscn"
 Inventory="*res://Scenes/Inventory.tscn"
+
+[global]
+
+displ=false
+run/main_scene="res://Scenes/Player.tscn"
+config/icon="res://icon.png"
 
 [input]
 
