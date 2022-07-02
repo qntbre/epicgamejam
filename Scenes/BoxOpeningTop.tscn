@@ -1,0 +1,155 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/BoxOpeningTop.gd" type="Script" id=1]
+[ext_resource path="res://Assets/box1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/big_open.png" type="Texture" id=3]
+[ext_resource path="res://Assets/background.png" type="Texture" id=4]
+[ext_resource path="res://Assets/background_top.png" type="Texture" id=5]
+[ext_resource path="res://Assets/box2.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "open",
+"speed": 2.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 18.5884
+height = 204.312
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 22.4722
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 2.0
+height = 46.0
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "openBox"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 3 ) ]
+}
+
+[sub_resource type="ParticlesMaterial" id=4]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 20, 20, 20 )
+initial_velocity = 50.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+color = Color( 0.627451, 0.435294, 0.305882, 1 )
+
+[node name="boxOpeningSide" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 511, 299.153 )
+scale = Vector2( 4.64115, 4.28791 )
+texture = ExtResource( 5 )
+
+[node name="BackgroundTop" type="Sprite" parent="."]
+position = Vector2( 511.876, 290.304 )
+scale = Vector2( 4.63749, 4.39789 )
+texture = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 526, 322 )
+scale = Vector2( 4.90341, 4.90341 )
+frames = SubResource( 3 )
+animation = "open"
+
+[node name="Box1" type="Sprite" parent="."]
+position = Vector2( 515, 316 )
+scale = Vector2( 4.84647, 4.59606 )
+texture = ExtResource( 2 )
+
+[node name="upGood" type="Area2D" parent="."]
+position = Vector2( 1040, 630 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="upGood"]
+position = Vector2( -508, -419 )
+rotation = -1.09956
+shape = SubResource( 2 )
+
+[node name="endPoint" type="Area2D" parent="."]
+position = Vector2( 1046, 629 )
+
+[node name="endPoint2d" type="CollisionShape2D" parent="endPoint"]
+position = Vector2( -429, -374 )
+shape = SubResource( 1 )
+
+[node name="startingPoint2" type="Area2D" parent="."]
+position = Vector2( 519, 316 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="startingPoint2"]
+position = Vector2( -76, -150 )
+shape = SubResource( 1 )
+
+[node name="firstOpenUpdate" type="Area2D" parent="."]
+position = Vector2( 686, 419 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="firstOpenUpdate"]
+position = Vector2( -209, -238 )
+rotation = 0.785398
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Box1")
+anims/RESET = SubResource( 6 )
+anims/openBox = SubResource( 7 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 443, 164 )
+emitting = false
+process_material = SubResource( 4 )
+
+[node name="secondOpenUpdate" type="Area2D" parent="."]
+position = Vector2( 1372, 838 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="secondOpenUpdate"]
+position = Vector2( -846, -630 )
+rotation = 0.785398
+shape = SubResource( 5 )
+
+[node name="thirdOpenUpdate" type="Area2D" parent="."]
+position = Vector2( 2744, 1676 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thirdOpenUpdate"]
+position = Vector2( -2169, -1442 )
+rotation = 0.785398
+shape = SubResource( 5 )
+
+[connection signal="mouse_exited" from="upGood" to="." method="_on_upGood_mouse_exited"]
+[connection signal="input_event" from="endPoint" to="." method="_on_endPoint_input_event"]
+[connection signal="input_event" from="startingPoint2" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="firstOpenUpdate" to="." method="_on_firstOpenUpdate_mouse_entered"]
+[connection signal="mouse_entered" from="secondOpenUpdate" to="." method="_on_secondOpenUpdate_mouse_entered"]
+[connection signal="mouse_entered" from="thirdOpenUpdate" to="." method="_on_thirdOpenUpdate_mouse_entered"]
