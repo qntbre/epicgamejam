@@ -10,5 +10,5 @@ export_presets.cfg
 .mono/
 data_*/
 
-.gitignore
+.DS_Store
 *.exe
