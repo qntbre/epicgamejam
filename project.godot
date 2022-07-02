@@ -11,12 +11,19 @@ config_version=4
 [application]
 
 config/name="egj2022"
+run/main_scene="res://Scenes/TitleScreen.tscn"
+
+[autoload]
+
+lastBox="*res://Scripts/lastBox.gd"
 
 [global]
 
 displ=false
 run/main_scene="res://Scenes/Player.tscn"
 config/icon="res://icon.png"
+global=true
+autoload=true
 
 [physics]
 

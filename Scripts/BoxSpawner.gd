@@ -1,7 +1,9 @@
 #tool
 extends Node2D
-
+ 
 var boxes = ["BigBox.tscn", "Box.tscn"]
+export var ts = false
+export var firstPart = true
 
 #func _physics_process(delta):
 #	if i < 100:
@@ -16,19 +18,36 @@ func rdmPosInt(maxi):
 	return randi()%maxi
 
 func _ready():
-	spawnBox(rdmPosInt(boxes.size()))
+	if firstPart == true:
+		spawnBox(rdmPosInt(boxes.size()))
+	else :
+		spawnMidBox()
 
 func spawnBox(id):
 	#var instanceId = randi()%boxes.size()
-	var boxScene = load("res://Scenes/Boxes/" + boxes[id])
+	var boxScene
+	if not ts :
+		boxScene = load("res://Scenes/Boxes/" + boxes[id])
+	else :
+		boxScene = load("res://Scenes/Boxes/downBadBox.tscn");
 	var parent = self.get_parent()
 	var inst = boxScene.instance()
 	inst.position = self.get_position()
 	call_deferred("add_child", inst)
 	print("Box spawned")
 
+func spawnMidBox():
+	var boxScene = load("res://Scenes/Boxes/" + boxes[0])
+	var parent = self.get_parent()
+	var inst = boxScene.instance()
+	inst.position = self.get_position() + Vector2(500, 0)
+	#call_deferred("add_child", inst)
+	print("Mid box spawned")
+
 func _on_Area2D_area_entered(area):
+	print("entered area2d")
 	spawnBox(rdmPosInt(boxes.size()))
+	pass
 
 #func _on_Timer_timeout():
 	#var test = boxInst.instance()
