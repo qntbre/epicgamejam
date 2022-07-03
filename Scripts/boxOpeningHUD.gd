@@ -3,16 +3,13 @@ extends CanvasLayer
 var lb = null
 
 func _ready():
-<<<<<<< HEAD:Scenes/boxOpeningHUD.gd
 	lb = get_node("/root/lastBox")
-=======
 	Inventory.hide()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
->>>>>>> master:Scripts/boxOpeningHUD.gd
 
 func _on_Open_pressed():
 	$Open.hide()

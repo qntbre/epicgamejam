@@ -1,13 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/boxOpeningHUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/box1.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=3]
-[ext_resource path="res://Assets/big_open.png" type="Texture" id=4]
 [ext_resource path="res://Assets/balance.png" type="Texture" id=5]
 [ext_resource path="res://Assets/scale_front.png" type="Texture" id=6]
-[ext_resource path="res://Assets/background.png" type="Texture" id=7]
-[ext_resource path="res://Assets/background_top.png" type="Texture" id=8]
+[ext_resource path="res://Assets/fusion_background.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=2]
 size = 64
@@ -44,29 +42,18 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.0156863 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "default",
-"speed": 3.0
-} ]
-
 [sub_resource type="DynamicFont" id=3]
 size = 64
 font_data = ExtResource( 3 )
 
 [node name="boxChoice" type="Node"]
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 511, 299.153 )
-scale = Vector2( 4.64115, 4.28791 )
-texture = ExtResource( 8 )
-
-[node name="BackgroundTop" type="Sprite" parent="."]
-position = Vector2( 511.876, 290.304 )
-scale = Vector2( 4.63749, 4.39789 )
+[node name="FusionBackground" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 texture = ExtResource( 7 )
+expand = true
 
 [node name="boxChoiceHUD" type="CanvasLayer" parent="."]
 script = ExtResource( 1 )
@@ -121,10 +108,10 @@ position = Vector2( 486, 410 )
 scale = Vector2( 6.2625, 6.2625 )
 texture = ExtResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Balance"]
+[node name="AnimatedSprite" type="Sprite" parent="Balance"]
 position = Vector2( 485, 203 )
 scale = Vector2( 3.02111, 3.02111 )
-frames = SubResource( 6 )
+texture = ExtResource( 2 )
 
 [node name="BalanceFront" type="Sprite" parent="Balance"]
 position = Vector2( 485, 415 )
