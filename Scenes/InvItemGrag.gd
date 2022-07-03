@@ -27,3 +27,14 @@ func drop_data(position, data):
 		Player.inv[str(self.get_parent().name)] = data["id"]
 		Player.update()
 	pass
+
+
+func _on_Icon_mouse_entered():
+	print(self.get_parent().name)
+	Inventory.display_infos(self.get_parent().name)
+	pass # Replace with function body.
+
+
+func _on_Icon_mouse_exited():
+	Inventory.display_infos(self.get_parent().name)
+	pass # Replace with function body.

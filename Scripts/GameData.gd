@@ -25,13 +25,11 @@ func load_data():
 	boxes = JSON.parse(box_file.get_as_text()).result
 	box_file.close()
 	
-	print(items.keys())
 	
 	for id in items.keys():
 		if (!(str(id) in Player.inv.values())):
 			items_stack.append(str(id))
 
-	print(items_stack)
 	items_stack.shuffle()
 	
 	pass # Replace with function body.

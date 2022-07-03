@@ -25,3 +25,14 @@ func can_drop_data(position, data):
 	
 func drop_data(position, data):
 	pass
+
+
+func _on_Element_mouse_entered():
+	Inventory.display_infos(self.name)
+	
+	pass # Replace with function body.
+
+
+func _on_Element_mouse_exited():
+	Inventory.display_infos("0")
+	pass # Replace with function body.

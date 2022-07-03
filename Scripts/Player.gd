@@ -8,7 +8,6 @@ var inv = {"Inv1": "10005", "Inv2": "10007", "Inv3": "0", "Inv4": "0"}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("dasdasdar")
 	randomize()
 	setup()
 	pass 
