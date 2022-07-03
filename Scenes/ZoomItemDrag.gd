@@ -26,6 +26,7 @@ func can_drop_data(_position, _data):
 	
 func drop_data(_position, data):
 	if ("id2" in data.keys() and self.name == "0"):
+		GameData.putItem = data["id2"]
 		self.texture = data["origin"].texture
 		self.name = data["id2"]
 		

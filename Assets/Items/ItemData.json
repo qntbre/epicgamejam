@@ -79,11 +79,7 @@
       "Image": "shrolex.png",
       "Tag": [],
       },
-<<<<<<< HEAD
       "10011": {
-=======
-    "10011": {
->>>>>>> cb0eb0832aeefc76769f3f3ab191c19f675aa393
       "Name": "Sora",
       "Desc": "Favourite player of our down bad brother",
       "Price": 25,
@@ -203,4 +199,12 @@
       "Image": "cutter.png",
       "Tag": [],
       },
+  "10026": {
+    "Name": "Paper",
+    "Desc": "Vault's code",
+    "Price": 1,
+    "Weight": 1,
+    "Image": "paper.png",
+    "Tag": [],
+    },
 }

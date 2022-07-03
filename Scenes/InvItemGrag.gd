@@ -29,6 +29,7 @@ func drop_data(_position, data):
 	#texture = data["texture"]
 	if ("id" in data.keys()):
 		if (Player.inv[str(self.get_parent().name)] == "0"):
+			GameData.putItem = "0"
 			Player.inv[str(self.get_parent().name)] = data["id"]
 			Player.update()
 			
@@ -36,6 +37,7 @@ func drop_data(_position, data):
 			data["origin"].name = "0"
 		else:
 			var old = Player.inv[str(self.get_parent().name)]
+			GameData.putItem = old
 			Player.inv[str(self.get_parent().name)] = data["id"]
 			Player.update()
 			
