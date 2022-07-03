@@ -44,7 +44,7 @@
       "Desc": "Watch",
       "Price": 100,
       "Weight": 0.15,
-      "Image": "gold_rolex.png",
+      "Image": "gold_rolex",
       "Tag": [],
       },
     "10007": {
@@ -57,7 +57,7 @@
       },
     "10008": {
       "Name": "Diapers",
-      "Desc": "You can pee yourself with those",
+      "Desc": "BUF: you can pee yourself with those",
       "Price": 7,
       "Weight": 0.6,
       "Image": "pampers.png",
@@ -79,7 +79,11 @@
       "Image": "shrolex.png",
       "Tag": [],
       },
+<<<<<<< HEAD
       "10011": {
+=======
+    "10011": {
+>>>>>>> cb0eb0832aeefc76769f3f3ab191c19f675aa393
       "Name": "Sora",
       "Desc": "Favourite player of our down bad brother",
       "Price": 25,

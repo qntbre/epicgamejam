@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/background_top.png" type="Texture" id=1]
+[ext_resource path="res://Assets/top.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/conveyorBelt.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Main.gd" type="Script" id=3]
 
@@ -17,13 +17,13 @@ position = Vector2( -2, 0 )
 firstPart = false
 
 [node name="AnimatedSprite3" parent="Node2D/Node2D/beltSprites" index="0"]
-frame = 0
+frame = 1
 
 [node name="AnimatedSprite4" parent="Node2D/Node2D/beltSprites" index="1"]
-frame = 2
+frame = 0
 
 [node name="AnimatedSprite5" parent="Node2D/Node2D/beltSprites" index="2"]
-frame = 1
+frame = 2
 
 [node name="BackgroundTop" type="Sprite" parent="."]
 position = Vector2( 512, 330 )
