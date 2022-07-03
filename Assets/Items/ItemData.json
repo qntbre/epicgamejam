@@ -199,4 +199,12 @@
       "Image": "cutter.png",
       "Tag": [],
       },
+  "10026": {
+    "Name": "Paper",
+    "Desc": "Vault's code",
+    "Price": 1,
+    "Weight": 1,
+    "Image": "paper.png",
+    "Tag": [],
+    },
 }
