@@ -8,10 +8,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Player.setup()
+	#Player.setup()
 	Inventory.show()
 	
-	var ite = "10001"
+	var ite = str(GameData.rng_item())
 	
 	if(str(ite) in GameData.items.keys()):
 		var icon_file = load("res://Assets/Items/" + GameData.items[str(ite)]["Image"])

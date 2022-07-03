@@ -83,11 +83,13 @@ anims/fade_to_normal = SubResource( 4 )
 [node name="Element" type="TextureRect" parent="Item"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -128.0
+margin_left = -300.0
 margin_top = 50.0
-margin_right = 128.0
-margin_bottom = 256.0
-rect_pivot_offset = Vector2( 128, 128 )
+margin_right = 300.0
+margin_bottom = 550.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 300, 0 )
+texture = ExtResource( 1 )
 stretch_mode = 6
 script = ExtResource( 5 )
 
@@ -108,3 +110,6 @@ margin_right = -100.0
 margin_bottom = 200.0
 custom_fonts/font = SubResource( 2 )
 text = "Take"
+
+[connection signal="mouse_entered" from="Item/Element" to="Item/Element" method="_on_Element_mouse_entered"]
+[connection signal="mouse_exited" from="Item/Element" to="Item/Element" method="_on_Element_mouse_exited"]

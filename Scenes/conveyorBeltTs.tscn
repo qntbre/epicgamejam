@@ -16,13 +16,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="Node2D"]
+[node name="conveyorbeltts" type="Node2D"]
 position = Vector2( 549, 266 )
 
-[node name="BoxSpawner" parent="." instance=ExtResource( 2 )]
+[node name="BoxSpawnerTs" parent="." instance=ExtResource( 2 )]
 position = Vector2( -481, 109 )
 rotation = -0.00778828
 z_index = 1
+ts = true
 
 [node name="killBoxTrigger" type="Area2D" parent="."]
 position = Vector2( 486, 32 )
@@ -55,4 +56,4 @@ scale = Vector2( 2, 1.5 )
 frames = SubResource( 2 )
 playing = true
 
-[connection signal="area_entered" from="killBoxTrigger" to="BoxSpawner" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="killBoxTrigger" to="BoxSpawnerTs" method="_on_Area2D_area_entered"]

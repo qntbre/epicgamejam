@@ -13,7 +13,6 @@ func _ready():
 	pass
 	
 func create_inv():
-
 	var grid = get_node("Background/GridContainer")
 	for itemSlot in Player.inv.keys():
 		var new_slot = slot_canvas.instance()
@@ -32,11 +31,31 @@ func display_inv():
 			itemSlot.get_node("Icon").set_texture(icon_file)
 		#if 
 
-
-
 	pass # Replace with function body.
 
+var goUp = 0
+var currentMargin = -275
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func display_infos(id):
+	
+	
+	if (id == "0"):
+		#get_node("Info").hide()
+		get_node("Info/AnimationPlayer").play("bouge")
+		pass
+	else:
+		if(str(id) in GameData.items.keys()):
+			get_node("Info").show()
+			#s
+			get_node("Info/AnimationPlayer").play_backwards("bouge")
+
+			var thisitem = GameData.items[id]
+			
+			get_node("Info/Description").set_text(str(thisitem["Desc"]))
+			get_node("Info/Name").set_text(str(thisitem["Name"]))
+			get_node("Info/Price").set_text(str(thisitem["Price"]))
+			get_node("Info/Weight").set_text(str(thisitem["Weight"]))
+		
+	
+
+	pass # Replace with function body.

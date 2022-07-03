@@ -6,6 +6,7 @@ extends Node
 # var b = "text"
 
 var items = {}
+var items_stack = []
 var boxes = {}
 
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +25,17 @@ func load_data():
 	boxes = JSON.parse(box_file.get_as_text()).result
 	box_file.close()
 	
+	
+	for id in items.keys():
+		if (!(str(id) in Player.inv.values())):
+			items_stack.append(str(id))
+
+	items_stack.shuffle()
+	
 	pass # Replace with function body.
+
+func rng_item():
+	return (items_stack.pop_front())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
