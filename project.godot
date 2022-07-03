@@ -11,10 +11,11 @@ config_version=4
 [application]
 
 config/name="egj2022"
-run/main_scene="res://Scenes/GameData.tscn"
+run/main_scene="res://Scenes/TitleScreen.tscn"
 
 [autoload]
 
+lastBox="*res://Scripts/lastBox.gd"
 Player="*res://Scripts/Player.gd"
 GameData="*res://Scenes/GameData.tscn"
 Inventory="*res://Scenes/Inventory.tscn"
@@ -25,6 +26,8 @@ GameMenu="*res://Scenes/GameMenu.tscn"
 displ=false
 run/main_scene="res://Scenes/Player.tscn"
 config/icon="res://icon.png"
+global=true
+autoload=true
 
 [input]
 
