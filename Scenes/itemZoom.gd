@@ -12,6 +12,7 @@ func _ready():
 	Inventory.do_show()
 	
 	var ite = GameData.chosenItem
+	GameData.putItem = GameData.chosenItem
 	
 	if(str(ite) in GameData.items.keys()):
 		var icon_file = load("res://Assets/Items/" + GameData.items[str(ite)]["Image"])
