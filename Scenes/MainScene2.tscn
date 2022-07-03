@@ -13,16 +13,7 @@ position = Vector2( -2, 0 )
 
 [node name="Node2D" parent="Node2D" instance=ExtResource( 2 )]
 
-[node name="AnimatedSprite3" parent="Node2D/Node2D/beltSprites" index="0"]
-frame = 2
-
-[node name="AnimatedSprite4" parent="Node2D/Node2D/beltSprites" index="1"]
-frame = 1
-
-[node name="AnimatedSprite5" parent="Node2D/Node2D/beltSprites" index="2"]
-frame = 0
-
-[node name="BoxSpawner" parent="Node2D/Node2D" index="3"]
+[node name="BoxSpawner" parent="Node2D/Node2D" index="4"]
 firstPart = false
 
 [node name="BackgroundTop" type="Sprite" parent="."]

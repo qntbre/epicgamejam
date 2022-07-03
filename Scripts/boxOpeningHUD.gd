@@ -29,4 +29,4 @@ func _on_DoNotOpen_pressed():
 	$Open.hide()
 	$DoNotOpen.hide()
 	lb.opened = 0
-	get_tree().change_scene("res://Scenes/mainScene2.tscn")
+	get_tree().change_scene("res://Scenes/MainScene2.tscn")

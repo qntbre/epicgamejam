@@ -13,12 +13,12 @@ func can_drop_data(_position, _data):
 	return (true)
 	
 func drop_data(_position, data):
-	#texture = data["texture"]
 	if ("id2" in data.keys()):
-		#Inve
 		print(data["id2"])
-		yield(get_tree().create_timer(1.5), "timeout")
-		get_tree().change_scene("res://Scenes/itemZoom.tscn")
+		print(GameData.items[data["id2"]]["Name"])
+		if GameData.items[data["id2"]]["Name"] in GameData.boxes[str(GameData.chosenBox)]["Methods"]:
+			yield(get_tree().create_timer(1.5), "timeout")
+			get_tree().change_scene("res://Scenes/itemZoom.tscn")
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

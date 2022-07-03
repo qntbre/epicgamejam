@@ -168,7 +168,7 @@
       "Tag": [],
       },
     "10022": {
-      "Name": "Circular saw",
+      "Name": "Meuleuse",
       "Desc": "BUF: Cuts the metal boxes. Can only be used once.",
       "Price": 2,
       "Weight": 2,
@@ -240,7 +240,7 @@
       "Tag": [],
       },
   "10031": {
-    "Name": "Circular saw",
+    "Name": "Meuleuse",
     "Desc": "BUF: Cuts the metal boxes. Can only be used once.",
     "Price": 2,
     "Weight": 2,

@@ -1,6 +1,6 @@
 extends Node
 
-var inv = {"Inv1": "10005", "Inv2": "10007", "Inv3": "0", "Inv4": "0"}
+var inv = {"Inv1": "10005", "Inv2": "10007", "Inv3": "10031", "Inv4": "0"}
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
