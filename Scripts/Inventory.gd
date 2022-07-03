@@ -42,12 +42,9 @@ func display_inv():
 			var icon_file = load("res://Assets/Items/" + GameData.items[str(icon_id)]["Image"])
 			itemSlot.get_children()[0].set_texture(icon_file)
 		#if 
-
 	pass # Replace with function body.
 
-
 func display_infos(id):
-	
 	
 	if (id == "0"):
 		#get_node("Info").hide()
@@ -62,10 +59,7 @@ func display_infos(id):
 			var thisitem = GameData.items[id]
 			
 			get_node("CanvasLayer/Info/Description").set_text(str(thisitem["Desc"]))
-			get_node("CanvasLayer/Info/Name").set_text(str(thisitem["Name"]))
-			get_node("CanvasLayer/Info/Price").set_text(str(thisitem["Price"]))
-			get_node("CanvasLayer/Info/Weight").set_text(str(thisitem["Weight"]))
-		
-	
-
+			get_node("CanvasLayer/Info/Name").set_text("Info:   %s" % [str(thisitem["Name"])])
+			get_node("CanvasLayer/Info/Price").set_text("Price:   %s" % [str(thisitem["Price"])])
+			get_node("CanvasLayer/Info/Weight").set_text("Weight:   %s" % [str(thisitem["Weight"])])
 	pass # Replace with function body.

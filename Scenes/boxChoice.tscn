@@ -129,13 +129,5 @@ margin_bottom = 456.0
 custom_fonts/font = SubResource( 3 )
 text = "42   00"
 
-[node name="Dot" type="Label" parent="Balance"]
-margin_left = 475.0
-margin_top = 393.0
-margin_right = 515.0
-margin_bottom = 407.0
-rect_scale = Vector2( 4.20919, 4.20919 )
-text = "."
-
 [connection signal="pressed" from="boxChoiceHUD/Open" to="boxChoiceHUD" method="_on_Open_pressed"]
 [connection signal="pressed" from="boxChoiceHUD/DoNotOpen" to="boxChoiceHUD" method="_on_DoNotOpen_pressed"]
