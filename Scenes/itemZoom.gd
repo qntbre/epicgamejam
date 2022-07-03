@@ -9,7 +9,8 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Player.setup()
-	Inventory.do_show()
+	Inventory.start_hide()
+	Inventory.do_hide()
 	
 	var ite = GameData.chosenItem
 	
