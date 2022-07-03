@@ -18,4 +18,4 @@ We are 5 young developers in 42lausanne doing our first game jam (that explains 
 Many mechanics and alternative endings couldn't be implemented but that's the game I guess :')
 
 ## Credits
-Shoutout to 
+Big big big shoutout to epig game jam and the staff you guys can cook that's for sure. That risoto UHHHHM  
