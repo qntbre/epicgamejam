@@ -13,6 +13,7 @@ var open3 = preload("../Assets/box_vert_open3.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Inventory.do_hide()
 	pass # Replace with function body.
 
 
@@ -30,7 +31,6 @@ func _physics_process(delta):
 	if selected:
 		$Particles2D.position = get_global_mouse_position()
 		print("On est down bad")
-		#global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -39,21 +39,18 @@ func _input(event):
 			get_parent().set_texture(ori)
 			selected = false
 
-
 func _on_endPoint_input_event(viewport, event, shape_idx):
 	if selected:
 		#$AnimationPlayer.play("openBox")
 		finished = true
 		yield(get_tree().create_timer(1.5), "timeout")
 		get_tree().change_scene("res://Scenes/itemZoom.tscn")
-	pass # Replace with function body.
 
 func _on_upGood_mouse_exited():
 	$Particles2D.emitting = false
 	if selected and not finished:
-		get_node("../TearBox").set_texture(ori)
+		get_parent().set_texture(ori)
 		selected = false
-
 
 func _on_firstOpenUpdate_mouse_entered():
 	if selected:
@@ -65,8 +62,6 @@ func _on_secondOpenUpdate_mouse_entered():
 	if selected:
 		get_parent().set_texture(open2)
 	pass # Replace with function body.
- 
-
 
 func _on_thirdOpenUpdate_mouse_entered():
 	if selected:

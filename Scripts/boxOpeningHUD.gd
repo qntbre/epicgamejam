@@ -3,6 +3,8 @@ extends CanvasLayer
 var lb = null
 
 func _ready():
+	GameData.chosenItem = str(GameData.rng_item())
+	get_node("../Balance/Label").set_text("%s  kg" % [str(GameData.items[GameData.chosenItem]["Weight"])])
 	lb = get_node("/root/lastBox")
 	Inventory.do_hide()
 	pass # Replace with function body.

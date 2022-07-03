@@ -8,6 +8,7 @@ extends Node
 var items = {}
 var items_stack = []
 var boxes = {}
+var chosenItem
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
