@@ -10,8 +10,19 @@ var slot_canvas = preload("res://Scenes/InvCanvas.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	do_hide()
 	pass
+
+func do_hide():
+	self.hide()
+	get_node("CanvasLayer/Background").hide()
+	get_node("CanvasLayer/Info").hide()
 	
+func do_show():
+	self.hide()
+	get_node("CanvasLayer/Background").show()
+	get_node("CanvasLayer/Info").show()
+
 func create_inv():
 	var grid = get_node("CanvasLayer/Background/GridContainer")
 	for itemSlot in Player.inv.keys():
