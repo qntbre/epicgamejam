@@ -30,11 +30,10 @@ func drop_data(position, data):
 
 
 func _on_Icon_mouse_entered():
-	print(self.get_parent().name)
-	Inventory.display_infos(self.get_parent().name)
+	Inventory.display_infos(self.name)
 	pass # Replace with function body.
 
 
 func _on_Icon_mouse_exited():
-	Inventory.display_infos(self.get_parent().name)
+	Inventory.display_infos("0")
 	pass # Replace with function body.
