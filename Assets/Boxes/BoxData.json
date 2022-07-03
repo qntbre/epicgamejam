@@ -19,13 +19,13 @@
     "Name": "BoxMetal",
     "Type": "metal",
     "Texture": "metal_box.png",
-    "Methods": ["couteau", "scie"]
+    "Methods": ["Meuleuse", "scie"]
   },
   "1006": {
     "Name": "BoxCode",
     "Type": "code",
     "Texture": "code_box.png",
-    "Methods": ["couteau", "code", "scie"]
+    "Methods": ["Paper"]
   },
   "1007": {
     "Texture": "hard1",
@@ -47,12 +47,12 @@
     "Name": "BoxMetal",
     "Type": "metal",
     "Texture": "metal_box.png",
-    "Methods": ["couteau", "scie"]
+    "Methods": ["Meuleuse", "scie"]
   },
   "1012": {
     "Name": "BoxCode",
     "Type": "code",
     "Texture": "code_box.png",
-    "Methods": ["couteau", "code", "scie"]
+    "Methods": [Paper]
   }
 }
