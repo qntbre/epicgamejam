@@ -17,7 +17,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 325, -0.25, 0, 0.25, 0, 325, -0.25, 0, 0.2, 51, 600, -0.3, -122.5, 0.25, 0 ),
+"points": PoolRealArray( 10, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.2, 51, -100, -0.3, -122.5, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5, 1.5 )
 }
 
@@ -71,8 +71,10 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -300.0
+margin_top = -590.0
 margin_right = 300.0
-margin_bottom = 89.9996
+margin_bottom = -500.0
+rect_scale = Vector2( 0.998113, 1.01181 )
 rect_pivot_offset = Vector2( 300, 0 )
 mouse_filter = 2
 color = Color( 1, 0.705882, 0.392157, 1 )
