@@ -51,7 +51,13 @@ playing = true
 [node name="OpenSceneTrigger" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OpenSceneTrigger"]
-position = Vector2( -4, 50 )
+position = Vector2( -4, 160 )
+shape = SubResource( 2 )
+
+[node name="reloadTrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reloadTrigger"]
+position = Vector2( 560, 207 )
 shape = SubResource( 2 )
 
 [node name="Box" type="Node2D" parent="."]

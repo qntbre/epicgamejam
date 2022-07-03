@@ -13,7 +13,8 @@ var open3 = preload("../Assets/box_vert_open3.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Inventory.do_hide()
+	Inventory.start_hide()
+	Inventory.do_show()
 	pass # Replace with function body.
 
 
@@ -67,3 +68,6 @@ func _on_thirdOpenUpdate_mouse_entered():
 	if selected:
 		get_parent().set_texture(open3)
 	pass # Replace with function body.
+
+
+

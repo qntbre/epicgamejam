@@ -14,6 +14,7 @@ var chosenBox
 var boxTexture
 var weightDiff
 var money
+var putItem
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,7 +47,6 @@ func rng_item():
 	return (items_stack.pop_front())
 	
 func rng_box():
-	return "1005"
 	return (boxes_stack.pop_front())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -18,7 +18,7 @@ func _on_Open_pressed():
 	$Open.hide()
 	$DoNotOpen.hide()
 	$AnimationPlayer.play("fade_to_white")
-	lb.opened = true
+	lb.opened = 1
 	yield(get_tree().create_timer(1.4), "timeout")
 	if GameData.boxes[str(GameData.chosenBox)]["Texture"] == "hard1":
 		get_tree().change_scene("res://Scenes/BoxOpeningSide.tscn")
@@ -31,5 +31,5 @@ func _on_Open_pressed():
 func _on_DoNotOpen_pressed():
 	$Open.hide()
 	$DoNotOpen.hide()
-	lb.opened = false
+	lb.opened = 0
 	get_tree().change_scene("res://Scenes/mainScene2.tscn")

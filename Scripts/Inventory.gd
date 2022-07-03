@@ -47,16 +47,19 @@ func display_inv():
 		#if 
 	pass # Replace with function body.
 
+func start_hide():
+	get_node("CanvasLayer/Info").hide()
+	get_node("CanvasLayer/Info").rect_position["y"] = -100
+
 func display_infos(id):
-	
+	get_node("CanvasLayer/Info").show()
 	if (id == "0"):
-		#get_node("Info").hide()
 		get_node("CanvasLayer/Info/AnimationPlayer").play("bouge")
 		pass
 	else:
 		if(str(id) in GameData.items.keys()):
 			#get_node("CanvasLayer/Info").show()
-			#s
+
 			get_node("CanvasLayer/Info/AnimationPlayer").play_backwards("bouge")
 
 			var thisitem = GameData.items[id]

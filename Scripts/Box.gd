@@ -13,8 +13,11 @@ func _on_area2D_area_entered(area):
 	randomize()
 	lastBox.boxType = randi()%3
 	print(lastBox.boxType)
-	get_tree().change_scene("res://Scenes/boxChoice.tscn")
-	#ref.paused = false
+	if area.name == "OpenSceneTrigger" :
+		get_tree().change_scene("res://Scenes/boxChoice.tscn")
+	else :
+		get_tree().change_scene("res://Scenes/mainscene.tscn")
+
 
 func _physics_process(delta):
 	self.position += Vector2(speed, 0)

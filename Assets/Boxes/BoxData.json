@@ -26,5 +26,33 @@
     "Type": "code",
     "Texture": "code_box.png",
     "Methods": ["couteau", "code", "scie"]
+  },
+  "1007": {
+    "Texture": "hard1",
+    "Methods": ["couteau", "hard1"]
+  },
+  "1008": {
+      "Texture": "hard1",
+      "Methods": ["couteau", "hard2"]
+  },
+  "1009": {
+    "Texture": "hard2",
+    "Methods": ["couteau", "hard2"]
+  },
+  "1010": {
+    "Texture": "hard2",
+    "Methods": ["couteau", "hard2"]
+  },
+  "1011": {
+    "Name": "BoxMetal",
+    "Type": "metal",
+    "Texture": "metal_box.png",
+    "Methods": ["couteau", "scie"]
+  },
+  "1012": {
+    "Name": "BoxCode",
+    "Type": "code",
+    "Texture": "code_box.png",
+    "Methods": ["couteau", "code", "scie"]
   }
 }
