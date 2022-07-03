@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pampers.png-b308ee2686028cc76841a2a0be128f6e.stex"
+path="res://.import/mouthwash.png-c471facb1465fdd832937f4241f8eec6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pampers.png"
-dest_files=[ "res://.import/pampers.png-b308ee2686028cc76841a2a0be128f6e.stex" ]
+source_file="res://Assets/Items/mouthwash.png"
+dest_files=[ "res://.import/mouthwash.png-c471facb1465fdd832937f4241f8eec6.stex" ]
 
 [params]
 
