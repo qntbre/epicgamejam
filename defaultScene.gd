@@ -20,5 +20,4 @@ func _ready():
 
 func _on_DoNotOpen_pressed():
 	Inventory.do_hide()
-	get_tree().change_scene("res://Scenes/MainScene2.tscn")
-	pass # Replace with function body.
+	self.get_tree().change_scene("res://Scenes/MainScene.tscn")

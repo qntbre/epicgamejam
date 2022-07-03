@@ -47,7 +47,6 @@ func rng_item():
 	return (items_stack.pop_front())
 	
 func rng_box():
-	return "1011"
 	return (boxes_stack.pop_front())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

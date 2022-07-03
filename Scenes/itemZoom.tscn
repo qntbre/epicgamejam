@@ -111,3 +111,4 @@ text = "next"
 
 [connection signal="mouse_entered" from="Item/Element" to="Item/Element" method="_on_Element_mouse_entered"]
 [connection signal="mouse_exited" from="Item/Element" to="Item/Element" method="_on_Element_mouse_exited"]
+[connection signal="pressed" from="Open" to="." method="_on_Open_pressed"]
