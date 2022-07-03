@@ -34,28 +34,26 @@ func display_inv():
 
 	pass # Replace with function body.
 
-var goUp = 0
-var currentMargin = -275
 
 func display_infos(id):
 	
 	
 	if (id == "0"):
 		#get_node("Info").hide()
-		get_node("Info/AnimationPlayer").play("bouge")
+		get_node("CanvasLayer/Info/AnimationPlayer").play("bouge")
 		pass
 	else:
 		if(str(id) in GameData.items.keys()):
-			get_node("Info").show()
+			#get_node("CanvasLayer/Info").show()
 			#s
-			get_node("Info/AnimationPlayer").play_backwards("bouge")
+			get_node("CanvasLayer/Info/AnimationPlayer").play_backwards("bouge")
 
 			var thisitem = GameData.items[id]
 			
-			get_node("Info/Description").set_text(str(thisitem["Desc"]))
-			get_node("Info/Name").set_text(str(thisitem["Name"]))
-			get_node("Info/Price").set_text(str(thisitem["Price"]))
-			get_node("Info/Weight").set_text(str(thisitem["Weight"]))
+			get_node("CanvasLayer/Info/Description").set_text(str(thisitem["Desc"]))
+			get_node("CanvasLayer/Info/Name").set_text(str(thisitem["Name"]))
+			get_node("CanvasLayer/Info/Price").set_text(str(thisitem["Price"]))
+			get_node("CanvasLayer/Info/Weight").set_text(str(thisitem["Weight"]))
 		
 	
 

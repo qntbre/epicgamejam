@@ -2,7 +2,7 @@ extends TextureRect
 
 
 
-func get_drag_data(position):
+func get_drag_data(_position):
 	var data = {}
 
 	data["id"] = self.name
@@ -20,10 +20,10 @@ func get_drag_data(position):
 	
 	return (data)
 
-func can_drop_data(position, data):
+func can_drop_data(_position, _data):
 	return (true)
 	
-func drop_data(position, data):
+func drop_data(_position, _data):
 	pass
 
 

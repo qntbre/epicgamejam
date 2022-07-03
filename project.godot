@@ -21,6 +21,10 @@ Player="*res://Scripts/Player.gd"
 GameData="*res://Scenes/GameData.tscn"
 Inventory="*res://Scenes/Inventory.tscn"
 
+[display]
+
+window/size/resizable=false
+
 [global]
 
 displ=false
