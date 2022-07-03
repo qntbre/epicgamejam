@@ -13,7 +13,6 @@ func _on_Open_pressed():
 	$DoNotOpen.hide()
 	$AnimationPlayer.play("fade_to_white")
 	lb.opened = 1
-	lb.nbrOpened += 1
 	print("nbr opened")
 	print(lb.nbrOpened)
 	yield(get_tree().create_timer(1.4), "timeout")
