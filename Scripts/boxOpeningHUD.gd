@@ -26,7 +26,5 @@ func _on_Open_pressed():
 	
 
 func _on_DoNotOpen_pressed():
-	$Open.hide()
-	$DoNotOpen.hide()
-	lb.opened = 0
-	get_tree().change_scene("res://Scenes/MainScene2.tscn")
+	Inventory.do_hide()
+	self.get_tree().change_scene("res://Scenes/MainScene.tscn")
