@@ -1,9 +1,9 @@
 # Down Bad
 ## The Game
 ### Scenario
-You are an Alazone employee. Your mission, if you accept it, is to save your son from the down bad at the hospital.
+You are an Alazone employee. Your son is down bad at the hospital and you must save him.
 
-To achieve this, you can steal the contents of the boxes and resell the collected items. Beware of weight differences, Joff is adamant about weight differences.
+To achieve this, you can steal the contents of the boxes and resell the collected items. Beware of weight differences, Joff Bezas is adamant about weight differences.
 ### Mechanics
 - Choose which box to open or not depending on the weight. 
 - You have a limited inventory space, think about it.
