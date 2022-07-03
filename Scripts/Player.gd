@@ -11,7 +11,12 @@ func _ready():
 	setup()
 	pass 
 
+#func _launch(delta):
+	#if !$AudioStreamPlayer.playing:
+		# $AudioStreamPlayer.play()
+
 func setup():
+	#Ui.show_on_top()
 	GameData.load_data()
 	Inventory.create_inv()
 	update()
@@ -21,3 +26,8 @@ func update():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_dayTimer_timeout():
+	# On lance la fin de la journee
+	pass # Replace with function body.
