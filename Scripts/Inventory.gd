@@ -31,7 +31,6 @@ func create_inv():
 		new_slot.get_node("Icon").name = Player.inv[itemSlot]
 		grid.add_child(new_slot)
 
-
 func display_inv():
 	var grid = get_node("CanvasLayer/Background/GridContainer")
 	

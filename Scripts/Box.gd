@@ -1,7 +1,7 @@
 #tool
 extends Node2D
 
-export (float) var speed = 0.2
+export (float) var speed = 3
 
 var lastBox = null
 
@@ -21,3 +21,8 @@ func _physics_process(delta):
 
 func _on_VisibilityNotifier2D_screen_exited():
 	self.queue_free()
+
+
+func _on_area2D2_area_entered(area):
+	if area.name == "OpenSceneTrigger":
+		get_tree().change_scene("res://Scenes/boxChoice.tscn")

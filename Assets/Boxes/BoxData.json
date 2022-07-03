@@ -1,12 +1,30 @@
 {
   "1001": {
-      "Name": "Box",
-      "Type": "cartoon",
-      "Images": ["tear_box.png", "big_open.png"]
+      "Texture": "hard1",
+      "Methods": ["couteau", "hard1"]
   },
   "1002": {
-      "Name": "Box",
-      "Type": "metal",
-      "Images": ["box1.png"]
+      "Texture": "hard1",
+      "Methods": ["couteau", "hard2"]
   },
+  "1003": {
+    "Texture": "hard2",
+    "Methods": ["couteau", "hard2"]
+  },
+  "1004": {
+    "Texture": "hard2",
+    "Methods": ["couteau", "hard2"]
+  },
+  "1005": {
+    "Name": "BoxMetal",
+    "Type": "metal",
+    "Texture": "metal_box.png",
+    "Methods": ["couteau", "scie"]
+  },
+  "1006": {
+    "Name": "BoxCode",
+    "Type": "code",
+    "Texture": "code_box.png",
+    "Methods": ["couteau", "code", "scie"]
+  }
 }
