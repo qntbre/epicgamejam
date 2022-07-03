@@ -5,8 +5,6 @@ extends TextureRect
 func get_drag_data(_position):
 	var data = {}
 	
-	print(self.name)
-	
 	if (self.name != "0"):
 		
 		data["origin"] = self
