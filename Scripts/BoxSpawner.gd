@@ -1,7 +1,6 @@
 #tool
 extends Node2D
  
-var boxes = ["BigBox.tscn", "Box.tscn"]
 export var ts = false
 export var firstPart = true
 
@@ -18,36 +17,36 @@ func rdmPosInt(maxi):
 	return randi()%maxi
 
 func _ready():
+	var texture
+	GameData.chosenBox = GameData.rng_box()
+	if GameData.boxes[str(GameData.chosenBox)]["Texture"] == "hard1":
+		GameData.boxTexture = load("res://Assets/tear_box.png")
+	elif GameData.boxes[str(GameData.chosenBox)]["Texture"] == "hard2":
+		GameData.boxTexture = load("res://Assets/box1.png")
+	else:
+		GameData.boxTexture = load("res://Assets/Boxes/" + GameData.boxes[str(GameData.chosenBox)]["Texture"])
 	if firstPart == true:
-		spawnBox(rdmPosInt(boxes.size()))
+		spawnBox()
 	else :
 		spawnMidBox()
 
-func spawnBox(id):
-	#var instanceId = randi()%boxes.size()
-	var boxScene
+func spawnBox():
 	if not ts :
-		boxScene = load("res://Scenes/Boxes/" + boxes[id])
+		$boxSprite.set_texture(GameData.boxTexture)
 	else :
-		boxScene = load("res://Scenes/Boxes/downBadBox.tscn");
-	var parent = self.get_parent()
-	var inst = boxScene.instance()
-	inst.position = self.get_position()
-	call_deferred("add_child", inst)
+		var text = load("res://Assets/downBadBox.png")
+		$boxSprite.set_texture(text)
 	print("Box spawned")
 
 func spawnMidBox():
-	var boxScene = load("res://Scenes/Boxes/" + boxes[0])
-	var parent = self.get_parent()
-	var inst = boxScene.instance()
-	inst.position = get_parent().get_node("OpenSceneTrigger").position + Vector2(800, 80)
-	inst.speed = 1.5
-	call_deferred("add_child", inst)
+	var texture = load("res://Assets/Boxes/" + GameData.boxes[str(GameData.chosenBox)]["Texture"])
+	$boxSprite.set_texture(texture)
+	#call_deferred("add_child", inst)
 	print("Mid box spawned")
 
 func _on_Area2D_area_entered(area):
 	print("entered area2d")
-	spawnBox(rdmPosInt(boxes.size()))
+	#spawnBox(rdmPosInt(boxes.size()))
 	pass
 
 #func _on_Timer_timeout():

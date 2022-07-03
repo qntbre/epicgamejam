@@ -12,9 +12,9 @@ func _ready():
 	setup()
 	pass 
 
-#func _launch(delta):
-	#if !$AudioStreamPlayer.playing:
-		# $AudioStreamPlayer.play()
+func _launch(delta):
+	if !$AudioStreamPlayer.playing:
+		$AudioStreamPlayer.play()
 
 func setup():
 	#Ui.show_on_top()
@@ -24,7 +24,6 @@ func setup():
 	
 func update():
 	Inventory.display_inv()
-	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

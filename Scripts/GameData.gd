@@ -7,21 +7,24 @@ extends Node
 
 var items = {}
 var items_stack = []
+var boxes_stack = []
 var boxes = {}
 var chosenItem
+var chosenBox
+var boxTexture
+var weightDiff
+var money
 var putItem
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-	
 
 func load_data():
 	var item_file = File.new()
 	item_file.open("res://Assets/Items/ItemData.json", File.READ)
 	items = JSON.parse(item_file.get_as_text()).result
 	item_file.close()
-	
 	var box_file = File.new()
 	box_file.open("res://Assets/Boxes/BoxData.json", File.READ)
 	boxes = JSON.parse(box_file.get_as_text()).result
@@ -34,10 +37,17 @@ func load_data():
 
 	items_stack.shuffle()
 	
+	for id in boxes.keys():
+		boxes_stack.append(str(id))
+	boxes_stack.shuffle()
+
 	pass # Replace with function body.
 
 func rng_item():
 	return (items_stack.pop_front())
+	
+func rng_box():
+	return (boxes_stack.pop_front())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

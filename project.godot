@@ -15,9 +15,9 @@ run/main_scene="res://Scenes/TitleScreen.tscn"
 
 [autoload]
 
+Player="*res://Scripts/Player.gd"
 Ui="*res://Scenes/Ui.gd"
 lastBox="*res://Scripts/lastBox.gd"
-Player="*res://Scripts/Player.gd"
 GameData="*res://Scenes/GameData.tscn"
 Inventory="*res://Scenes/Inventory.tscn"
 

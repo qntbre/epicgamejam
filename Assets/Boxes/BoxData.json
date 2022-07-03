@@ -1,12 +1,58 @@
 {
   "1001": {
-      "Name": "Box",
-      "Type": "cartoon",
-      "Images": ["tear_box.png", "big_open.png"]
+      "Texture": "hard1",
+      "Methods": ["couteau", "hard1"]
   },
   "1002": {
-      "Name": "Box",
-      "Type": "metal",
-      "Images": ["box1.png"]
+      "Texture": "hard1",
+      "Methods": ["couteau", "hard2"]
   },
+  "1003": {
+    "Texture": "hard2",
+    "Methods": ["couteau", "hard2"]
+  },
+  "1004": {
+    "Texture": "hard2",
+    "Methods": ["couteau", "hard2"]
+  },
+  "1005": {
+    "Name": "BoxMetal",
+    "Type": "metal",
+    "Texture": "metal_box.png",
+    "Methods": ["Meuleuse", "scie"]
+  },
+  "1006": {
+    "Name": "BoxCode",
+    "Type": "code",
+    "Texture": "code_box.png",
+    "Methods": ["Paper"]
+  },
+  "1007": {
+    "Texture": "hard1",
+    "Methods": ["couteau", "hard1"]
+  },
+  "1008": {
+      "Texture": "hard1",
+      "Methods": ["couteau", "hard2"]
+  },
+  "1009": {
+    "Texture": "hard2",
+    "Methods": ["couteau", "hard2"]
+  },
+  "1010": {
+    "Texture": "hard2",
+    "Methods": ["couteau", "hard2"]
+  },
+  "1011": {
+    "Name": "BoxMetal",
+    "Type": "metal",
+    "Texture": "metal_box.png",
+    "Methods": ["Meuleuse", "scie"]
+  },
+  "1012": {
+    "Name": "BoxCode",
+    "Type": "code",
+    "Texture": "code_box.png",
+    "Methods": [Paper]
+  }
 }
