@@ -53,6 +53,6 @@
     "Name": "BoxCode",
     "Type": "code",
     "Texture": "code_box.png",
-    "Methods": [Paper]
+    "Methods": ["Paper"]
   }
 }

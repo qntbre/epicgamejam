@@ -13,8 +13,7 @@ var open3 = preload("../Assets/box_open3.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Inventory.start_hide()
-	Inventory.do_show()
+	Inventory.do_hide()
 	pass # Replace with function body.
 
 
