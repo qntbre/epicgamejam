@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shrolex.png-667b955ab014ea5dd5dd9b8ec5d2c3a9.stex"
+path="res://.import/fusion_background.png-8105d0f9b8c2cff4a68acc2df505699c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/shrolex.png"
-dest_files=[ "res://.import/shrolex.png-667b955ab014ea5dd5dd9b8ec5d2c3a9.stex" ]
+source_file="res://Assets/fusion_background.png"
+dest_files=[ "res://.import/fusion_background.png-8105d0f9b8c2cff4a68acc2df505699c.stex" ]
 
 [params]
 

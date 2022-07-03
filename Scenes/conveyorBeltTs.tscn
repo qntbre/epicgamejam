@@ -40,20 +40,20 @@ scale = Vector2( 1, 2 )
 position = Vector2( -329, 46 )
 scale = Vector2( 2, 1.5 )
 frames = SubResource( 2 )
-frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="beltSprites"]
 position = Vector2( 111, 46 )
 scale = Vector2( 2, 1.5 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="beltSprites"]
 position = Vector2( 549, 46 )
 scale = Vector2( 2, 1.5 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [connection signal="area_entered" from="killBoxTrigger" to="BoxSpawnerTs" method="_on_Area2D_area_entered"]
