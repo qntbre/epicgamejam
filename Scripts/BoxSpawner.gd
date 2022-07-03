@@ -40,8 +40,9 @@ func spawnMidBox():
 	var boxScene = load("res://Scenes/Boxes/" + boxes[0])
 	var parent = self.get_parent()
 	var inst = boxScene.instance()
-	inst.position = self.get_position() + Vector2(500, 0)
-	#call_deferred("add_child", inst)
+	inst.position = get_parent().get_node("OpenSceneTrigger").position + Vector2(800, 80)
+	inst.speed = 1.5
+	call_deferred("add_child", inst)
 	print("Mid box spawned")
 
 func _on_Area2D_area_entered(area):
