@@ -1,5 +1,6 @@
 extends Node2D
+onready var lb = get_node("/root/lastBox")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if lb.nbrOpened == 5 :
+		get_tree().change_scene("res://Scenes/WinScreen.tscn")

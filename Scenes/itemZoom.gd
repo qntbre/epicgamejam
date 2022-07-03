@@ -17,11 +17,11 @@ func _ready():
 		var icon_file = load("res://Assets/Items/" + GameData.items[str(ite)]["Image"])
 		get_node("Item/Element").set_texture(icon_file)
 		get_node("Item/Element").set_name(str(ite))
-	
 	#CanvasLayer.AnimationPlayer.play("fade_to_normal")
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Open_pressed():
+	var ite = GameData.chosenItem
+	GameData.items[str(ite)]["Weight"]
+	Inventory.do_hide()
+	self.get_tree().change_scene("res://Scenes/MainScene.tscn")

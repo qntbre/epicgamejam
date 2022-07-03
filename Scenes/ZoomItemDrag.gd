@@ -28,7 +28,7 @@ func drop_data(_position, data):
 	if ("id2" in data.keys() and self.name == "0"):
 		self.texture = data["origin"].texture
 		self.name = data["id2"]
-	
+		
 		Player.inv[str(data["origin"].get_parent().name)] = "0"
 		Player.update()
 	pass
